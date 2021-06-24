@@ -66,21 +66,8 @@ func DecryptWithBase64Key(cipherText []byte, priKey string) ([]byte, error) {
 	if block == nil || err != nil {
 		return nil, errors.New("private key error")
 	}
-	pri, err := x509.ParsePKCS1PrivateKey(block)
-	if err != nil {
-		return nil, err
-	}
-	partLen := pri.PublicKey.N.BitLen() / 8
-	chunks := split(cipherText, partLen)
-	buffer := bytes.NewBufferString("")
-	for _, chunk := range chunks {
-		decrypted, err := rsa.DecryptPKCS1v15(rand.Reader, pri, chunk)
-		if err != nil {
-			return nil, err
-		}
-		buffer.Write(decrypted)
-	}
-	return buffer.Bytes(), nil
+
+	return Decrypt(cipherText, block)
 }
 
 func Decrypt(cipherText []byte, priKey []byte) ([]byte, error) {

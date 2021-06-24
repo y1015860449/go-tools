@@ -8,5 +8,6 @@ require (
 	github.com/google/uuid v1.2.0
 	github.com/mozillazg/go-pinyin v0.18.0
 	github.com/stretchr/testify v1.7.0
+	github.com/tjfoc/gmsm v1.4.0
 	github.com/yeqown/go-qrcode v1.5.5
 )
