@@ -13,11 +13,11 @@ import (
 	"time"
 )
 
-func UUID() string {
+func GetUUID() string {
 	return strings.ReplaceAll(uuid.New().String(), "-", "")
 }
 
-func Millisecond() int64 {
+func GetMillisecond() int64 {
 	return time.Now().UnixNano() / 1e6
 }
 
@@ -45,6 +45,13 @@ func VerifyMobile(mobile string) bool {
 	pattern := `^[0-9]*$`
 	reg := regexp.MustCompile(pattern)
 	return reg.MatchString(mobile)
+}
+
+func VerifyIp (ip string) bool {
+	ip = strings.Trim(ip, " ")
+	pattern := `^(([1-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.)(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){2}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$`
+	reg := regexp.MustCompile(pattern)
+	return reg.MatchString(ip)
 }
 
 //结构体转map[string]string

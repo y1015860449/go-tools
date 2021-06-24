@@ -19,6 +19,7 @@ func NewImageUtils() ImageUtils {
 	return &defImageUtils{}
 }
 
+// 获取缩略图
 func (p *defImageUtils) GetThumbData(filename string, width, height int) ([]byte, error) {
 	image, err := imaging.Open(filename)
 	if err != nil {
@@ -32,6 +33,7 @@ func (p *defImageUtils) GetThumbData(filename string, width, height int) ([]byte
 	return buf.Bytes(), nil
 }
 
+// 获取图片信息
 func (p *defImageUtils) GetImageInfo(filename string) (width int, height int, length int64, isGif bool, err error) {
 	file, err := os.Open(filename)
 	if err != nil {
