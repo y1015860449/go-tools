@@ -1,4 +1,4 @@
-module go-tools
+module github.com/y1015860449/go-tools
 
 go 1.16
 
