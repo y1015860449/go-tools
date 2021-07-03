@@ -5,9 +5,7 @@ import (
 	"testing"
 )
 
-
-
-func TestSm4(t *testing.T)  {
+func TestSm4(t *testing.T) {
 	key := "11235fsdf54654f0"
 	iv := "85rdsd=4rdeireuy"
 	text := "hello world! 测试 ***** ¥¥ 44 ^ ^ `` ) ( - + @"

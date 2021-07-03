@@ -9,4 +9,3 @@ func EncryptOFB(key []byte, in []byte) ([]byte, error) {
 func DecryptOFB(key []byte, in []byte) ([]byte, error) {
 	return sm4.Sm4OFB(key, in, false)
 }
-

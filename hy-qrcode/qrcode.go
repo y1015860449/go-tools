@@ -1,4 +1,4 @@
-package qrcode
+package hy_qrcode
 
 import (
 	"bytes"

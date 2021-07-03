@@ -1,4 +1,4 @@
-package file
+package hy_file
 
 import (
 	"errors"

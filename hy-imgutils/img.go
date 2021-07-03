@@ -1,4 +1,4 @@
-package imgutils
+package hy_imgutils
 
 import (
 	"bytes"

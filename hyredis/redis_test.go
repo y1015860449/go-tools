@@ -1,7 +1,7 @@
 package hyredis
 
 import (
-	"github.com/y1015860449/go-tools/utils"
+	"github.com/y1015860449/go-tools/hy-utils"
 	"reflect"
 	"testing"
 	"time"
@@ -131,7 +131,7 @@ func Test_MGet(t *testing.T) {
 }
 
 func randomStr() string {
-	return utils.GetUUID()[:4]
+	return hy_utils.GetUUID()[:4]
 }
 
 func randomStrs(num int) []string {

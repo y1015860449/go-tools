@@ -1,4 +1,4 @@
-package utils
+package hy_utils
 
 import (
 	"encoding/json"
@@ -47,7 +47,7 @@ func VerifyMobile(mobile string) bool {
 	return reg.MatchString(mobile)
 }
 
-func VerifyIp (ip string) bool {
+func VerifyIp(ip string) bool {
 	ip = strings.Trim(ip, " ")
 	pattern := `^(([1-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.)(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){2}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$`
 	reg := regexp.MustCompile(pattern)
