@@ -6,7 +6,6 @@ import (
 	"testing"
 )
 
-
 var priKey string
 var pubKey string
 

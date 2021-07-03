@@ -2,8 +2,8 @@ package tea
 
 import (
 	"bufio"
-	"dm-im-sdk/core/common/errs"
 	"encoding/base64"
+	"errors"
 	"io"
 	"os"
 )
@@ -51,7 +51,7 @@ func DecryptFileWithKey(key []byte, inFile, outFile string) error {
 func encryptFileWithB64Key(b64Key string, inFile, outFile string, maxEncLen uint32) error {
 
 	if b64Key == "" || inFile == "" || outFile == "" {
-		return errs.ErrInvalidParameter
+		return errors.New("pram except")
 	}
 
 	keyBytes, err := base64.StdEncoding.DecodeString(b64Key)
@@ -63,7 +63,7 @@ func encryptFileWithB64Key(b64Key string, inFile, outFile string, maxEncLen uint
 
 func encryptFileWithKey(key []byte, inFile, outFile string, maxEncLen uint32) error {
 	if len(key) <= 0 || len(inFile) <= 0 || len(outFile) <= 0 {
-		return errs.ErrInvalidParameter
+		return errors.New("pram except")
 	}
 	cipher, err := NewCipherWithRounds(key, 32)
 	if err != nil {
@@ -75,7 +75,7 @@ func encryptFileWithKey(key []byte, inFile, outFile string, maxEncLen uint32) er
 func decryptFileWithB64Key(b64Key string, inFile, outFile string, maxEncLen uint32) error {
 
 	if b64Key == "" || inFile == "" || outFile == "" {
-		return errs.ErrInvalidParameter
+		return errors.New("pram except")
 	}
 
 	keyBytes, err := base64.StdEncoding.DecodeString(b64Key)
@@ -87,7 +87,7 @@ func decryptFileWithB64Key(b64Key string, inFile, outFile string, maxEncLen uint
 
 func decryptFileWithKey(key []byte, inFile, outFile string, maxEncLen uint32) error {
 	if len(key) <= 0 || len(inFile) <= 0 || len(outFile) <= 0 {
-		return errs.ErrInvalidParameter
+		return errors.New("pram except")
 	}
 	cipher, err := NewCipherWithRounds(key, 32)
 	if err != nil {
