@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/y1015860449/go-tools/hy-imgutils"
+	"github.com/y1015860449/go-tools/hy_imgutils"
 )
 
 func main() {

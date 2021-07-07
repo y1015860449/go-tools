@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"encoding/binary"
 	"github.com/stretchr/testify/assert"
-	"github.com/y1015860449/go-tools/hy-encrypt/md5"
+	"github.com/y1015860449/go-tools/hy_encrypt/md5"
 	"math/rand"
 	"os"
 	"testing"

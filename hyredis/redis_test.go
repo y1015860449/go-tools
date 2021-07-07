@@ -1,7 +1,7 @@
 package hyredis
 
 import (
-	"github.com/y1015860449/go-tools/hy-utils"
+	"github.com/y1015860449/go-tools/hy_utils"
 	"reflect"
 	"testing"
 	"time"
