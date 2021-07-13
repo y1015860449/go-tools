@@ -45,6 +45,14 @@ func ConnectMongoDb(mongoURI string, maxPoolSize uint64) (*HyMongo, error) {
 	return &HyMongo{client: client}, nil
 }
 
+func (cli *HyMongo) GetDatabase(dbName string) *mongo.Database {
+	return cli.client.Database(dbName)
+}
+
+func (cli *HyMongo) GetCollection(dbName, collName string) *mongo.Collection {
+	return cli.client.Database(dbName).Collection(collName)
+}
+
 func (cli *HyMongo) CreateCollection(dbName, collName string) error {
 	return cli.client.Database(dbName).CreateCollection(context.TODO(), collName)
 }
@@ -209,4 +217,8 @@ func (cli *HyMongo) Count(dbName string, collName string, filter interface{}, op
 
 func (cli *HyMongo) DeleteCollection(dbName, collName string) error {
 	return cli.client.Database(dbName).Collection(collName).Drop(context.TODO())
+}
+
+func (cli *HyMongo) Transaction(ctx context.Context, fn func(mongo.SessionContext) error) error {
+	return cli.client.UseSession(ctx, fn)
 }
