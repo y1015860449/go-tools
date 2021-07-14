@@ -9,6 +9,8 @@ require (
 	github.com/disintegration/imaging v1.6.2
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-resty/resty/v2 v2.6.0
+	github.com/go-sql-driver/mysql v1.6.0
+	github.com/go-xorm/xorm v0.7.9
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/uuid v1.2.0
 	github.com/jonboulle/clockwork v0.2.2 // indirect
@@ -29,4 +31,8 @@ require (
 	github.com/zput/zxcTool v1.3.6
 	go.mongodb.org/mongo-driver v1.5.3
 	go.uber.org/atomic v1.8.0 // indirect
+	gorm.io/driver/mysql v1.1.1
+	gorm.io/gorm v1.21.12
+	gorm.io/plugin/dbresolver v1.1.0
+	xorm.io/core v0.7.3
 )
